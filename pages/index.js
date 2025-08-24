@@ -14,7 +14,7 @@ const Home = () => {
           initial='hidden' animate='show' exit='hidden' className="h1">Transforming Ideas <br /> Into <span className="text-accent">Digital Reality</span></motion.h1>
         {/* subtitle  */}
         <motion.p className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16" variants={fadeIn('down', 0.3)}
-          initial='hidden' animate='show' exit='hidden'>helllllllllllllllllllooo lolllllllllllll
+          initial='hidden' animate='show' exit='hidden'>Debugging problems. Designing solutions. Delivering results.
         </motion.p>
         {/* btn  */}
         <div className="flex justify-center xl:hidden relative">

@@ -25,7 +25,7 @@ export const aboutData = [
     id: 1,
     title: 'skills',
     info: [
-      {
+      { key:"icon1",
         title: 'Frontend',
         icons: [
           <FaHtml5 key="html5" />,
@@ -41,57 +41,60 @@ export const aboutData = [
       {
         id: 2,
         title: 'Backend',
-        icons: [<FaNodeJs key='nodejs'/>, <FaJava key="java"/>, <SiExpress key="express" />],
+        icons: [
+        <FaNodeJs key='nodejs'/>, <FaJava key="java"/>, <SiExpress key="express" />],
       },
     ],
   },
-  {
-    id: 3,
-    title: 'awards',
-    info: [
-      {
-        title: 'Webby Awards - Honoree',
-        stage: '2011 - 2012',
-      },
-      {
-        title: 'Adobe Design Achievement Awards - Finalist',
-        stage: '2009 - 2010',
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   title: 'awards',
+  //   info: [
+  //     { key:"title1",
+  //       title: 'Webby Awards - Honoree',
+  //       stage: '2011 - 2012',
+  //     },
+  //     {
+  //        key:"title2",
+  //       title: 'Adobe Design Achievement Awards - Finalist',
+  //       stage: '2009 - 2010',
+  //     },
+  //   ],
+  // },
   {
     id: 4,
     title: 'experience',
     info: [
       {
-        title: 'UX/UI Designer - XYZ Company',
-        stage: '2012 - 2023',
+         key:"exp1",
+        title: 'Full Stack Developemt -InlignX Global Pvt. ltd Banglore',
+        stage: 'JUNE-2025',
       },
       {
-        title: 'Web Developer - ABC Agency',
-        stage: '2010 - 2012',
-      },
-      {
-        title: 'Intern - DEF Corporation',
-        stage: '2008 - 2010',
+          key:"exp2",
+        title: 'Full Stack Development ',
+        stage: 'JULY-AUGUST 2025',
       },
     ],
   },
   {
     id: 5,
-    title: 'credentials',
+    title: 'Education',
     info: [
       {
-        title: 'Web Development - ABC University, LA, CA',
-        stage: '2011',
+        key:"cred1",
+        title: "High School-St. Mary's Inter College",
+        stage: '2020',
       },
       {
-        title: 'Computer Science Diploma - AV Technical Institute',
-        stage: '2009',
+         key:"cred2",
+        title: "Intermediate-St Mary's Inter College",
+        stage: '2022',
       },
       {
-        title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-        stage: '2006',
+         key:"cred3",
+        title: "B.Tech-CSE From-SR. Institute of Management And Technology",
+        stage: '2022-2026',
       },
     ],
   },
@@ -146,14 +149,17 @@ const About = () => {
       </div>
       {/* info  */}
 
-      {/* <motion.div variants={fadeIn('left', 0.4)} initial='hidden' animate="show" exit="hidden"  className="flex  flex-col w-full xl:max-w-[48%] h-[480px] "></motion.div> */}
       <div>
-        <motion.div variants={fadeIn('left', 0.4)} initial='hidden' animate="show" exit="hidden" className="flex xl:gap-x-8 mx-auto xl:mx-0 mb-0">
+        <motion.div variants={fadeIn('left', 0.4)} 
+           initial='hidden'
+            animate="show"
+             exit="hidden"
+              className="flex xl:gap-x-8 mx-auto xl:mx-0 mb-0">
           {aboutData.map((item, itemindex) => (
             <div
               key={itemindex}
               onClick={() => setIndex(itemindex)}
-              className={`relative cursor-pointer  text-white capitalize xl:text-lg transition-colors duration-300 gap-y-3 m-5
+              className={`relative cursor-pointer  text-white capitalize xl:text-lg transition-colors duration-300 gap-y-3  m-3 xl:m-5
       ${index === itemindex ? "text-accent" : "hover:text-accent"}`}
             >
               <span className="relative z-10 py-3">{item.title}</span>
@@ -165,9 +171,13 @@ const About = () => {
 
           ))}
         </motion.div>
-        <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
+        <motion.div variants={fadeIn('up', 0.45)} 
+           initial='hidden'
+            animate="show"
+             exit="hidden"
+              className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
           {aboutData[index].info.map((item, itemindex) => {
-            return <div key={item.id} className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60">
+            return <div key={itemindex} className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60">
               {/* title  */}
               <div className="font-light mb-2 md:mb-0 ">
                 {item.title}
@@ -183,7 +193,7 @@ const About = () => {
             </div>
 
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   </div>;
